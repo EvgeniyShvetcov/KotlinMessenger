@@ -31,11 +31,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/RecyclerListView">
 
-        <Button
+        <ImageButton
             android:id="@+id/AddAttachementsButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:onClick="onAddAtachementsButtonClick"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:background="@android:color/white"
+            android:onClick="onAddAtachementsButtonClick"
+            android:src="@drawable/ic_location_on_black_36dp" />
 
         <EditText
             android:id="@+id/MessageTextEdit"
@@ -43,12 +46,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Ваше сообщение" />
-
-        <Button
+        <ImageButton
             android:id="@+id/SendMessageButton"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:onClick="onSendMessageButtonClick"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:background="@android:color/white"
+            android:onClick="onSendMessageButtonClick"
+            android:src="@drawable/ic_send_black_36dp"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
 </layout>

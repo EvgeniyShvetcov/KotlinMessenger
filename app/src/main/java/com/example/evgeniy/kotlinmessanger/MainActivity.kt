@@ -64,9 +64,6 @@ class MainActivity : AppCompatActivity() {
             ActivityCompat.requestPermissions( this, arrayOf(android.Manifest.permission.ACCESS_COARSE_LOCATION), 1488);
         }
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
-        fusedLocationClient.lastLocation.addOnSuccessListener { location : Location? ->
-            this.currentLocation = location;
-        }
 
     }
 
@@ -84,8 +81,9 @@ class MainActivity : AppCompatActivity() {
     fun onAddAtachementsButtonClick(view : View?) {
         var message = "";
         try {
-            val task = fusedLocationClient.lastLocation;
-            currentLocation = task.result
+            fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
+                this.currentLocation = location;
+            }
             message = "Текущее положение: " + currentLocation?.latitude + "," + currentLocation?.longitude;
         }
         catch (e: SecurityException) {

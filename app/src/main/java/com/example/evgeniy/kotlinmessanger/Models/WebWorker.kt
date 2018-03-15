@@ -67,7 +67,7 @@ class WebWorker{
         override fun onDisconnected(websocket: WebSocket?, serverCloseFrame: WebSocketFrame?, clientCloseFrame: WebSocketFrame?, closedByServer: Boolean) {
             if(closedByServer)
             {
-                websocket?.sendContinuation();
+                weakReference?.get()?.finish()
             }
         }
 
